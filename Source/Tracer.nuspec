@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>CPP.Tracer</id>
+		<version>0.0.1</version>
+		<authors>mwasplund</authors>
+		<owners>mwasplund</owners>
+		<licenseUrl>https://raw.githubusercontent.com/mwasplund/Tracer/master/LICENSE</licenseUrl>
+		<projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+		<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Simply header based implementation of logging to std out in c++ modern code.</description>
+		<releaseNotes>Beta build.</releaseNotes>
+		<copyright>Copyright 2017</copyright>
+		<tags>cpp c++ trace tracer logging log</tags>
+		<dependencies>
+		</dependencies>
+
+		<files>
+			<file src="Tracer.h" target="" />
+		</files>
+	</metadata>
+</package>
