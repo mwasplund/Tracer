@@ -5,6 +5,23 @@
 #include "pch.h"
 #include "TracerImpl.h"
 
+std::wstring ToString(int value, int requiredDigits)
+{
+	std::wstring result = std::wstring(requiredDigits, '0');
+	int index = requiredDigits - 1;
+	int currValue = value;
+	while (currValue != 0 && index >= 0)
+	{
+		int digit = currValue % 10;
+		wchar_t digitChar = digit + 48;
+		result[index] = digitChar;
+		index--;
+		currValue /= 10;
+	}
+
+	return result;
+}
+
 void WriteLine(const wchar_t* message)
 {
 	// Get the current time
@@ -13,9 +30,9 @@ void WriteLine(const wchar_t* message)
 	localtime_s(&timeInfo, &rawTime);
 
 	std::wcout << L"["
-		<< timeInfo.tm_hour << L":"
-		<< timeInfo.tm_min << L":"
-		<< timeInfo.tm_sec << L"] "
+		<< ToString(timeInfo.tm_hour, 2) << L":"
+		<< ToString(timeInfo.tm_min, 2) << L":"
+		<< ToString(timeInfo.tm_sec, 2) << L"] "
 		<< message << std::endl;
 }
 
