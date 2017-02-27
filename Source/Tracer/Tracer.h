@@ -6,6 +6,17 @@
 #include <ctime>
 #include <iostream>
 #include <string>
+#ifdef _WIN32
+// Exclude rarely-used stuff from Windows headers
+#define WIN32_LEAN_AND_MEAN
+#include <Windows.h>
+#endif
+
+// Contoller flags defaults 
+// Set before include this header to force desired state
+#ifndef TRACER_MESSAGE_BOX_ERROR
+#define TRACER_MESSAGE_BOX_ERROR true
+#endif
 
 /// <summary>
 /// Core tracer class
@@ -27,6 +38,12 @@ public:
 	inline static void LogError(const std::wstring& message)
 	{
 		WriteLine(L"ERROR: " + message);
+
+#if TRACER_MESSAGE_BOX_ERROR
+#ifdef _WIN32
+		MessageBoxW(nullptr, message.c_str(), L"Error!", MB_OK);
+#endif
+#endif
 	}
 
 	/// <summary>
@@ -38,6 +55,9 @@ public:
 	}
 
 private:
+	/// <summary>
+	/// Write a single line message
+	/// </summary>
 	inline static void WriteLine(const std::wstring& message)
 	{
 		// Get the current time
