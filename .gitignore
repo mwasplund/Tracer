@@ -1,11 +1,10 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-*.suo
+﻿#Visual Studio Files
 [Oo]bj
 [Bb]in
 ipch
+*.suo
 *.opendb
 *.db
+
+#NuGet Files
 *.nupkg
