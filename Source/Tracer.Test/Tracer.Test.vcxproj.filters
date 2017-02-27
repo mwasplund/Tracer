@@ -7,6 +7,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tracer.h" />
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Tracer.Test.cpp" />
+    <ClCompile Include="pch.cpp" />
   </ItemGroup>
 </Project>

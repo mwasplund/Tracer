@@ -5,5 +5,7 @@
 *.suo
 [Oo]bj
 [Bb]in
+ipch
 *.opendb
 *.db
+*.nupkg

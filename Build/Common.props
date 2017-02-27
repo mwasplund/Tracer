@@ -20,6 +20,8 @@ Copyright (C) mwasplund. All rights reserved.
     <ObjDir>$(RootDir)obj\</ObjDir>
     <TempDir>$(RootDir)temp\</TempDir>
 
+    <TracerDir>$(SourceDir)Tracer\</TracerDir>
+
     <IntermediateOutputPath>$(ObjDir)$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
     <OutputPath>$(BinDir)$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
     <OutDir>$(OutputPath)</OutDir>

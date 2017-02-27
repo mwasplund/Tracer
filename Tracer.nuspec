@@ -2,22 +2,25 @@
 <package >
 	<metadata>
 		<id>CPP.Tracer</id>
-		<version>0.0.1</version>
-		<authors>mwasplund</authors>
+		<version>0.1.1-beta</version>
+		<authors>Matthew Asplund</authors>
 		<owners>mwasplund</owners>
 		<licenseUrl>https://raw.githubusercontent.com/mwasplund/Tracer/master/LICENSE</licenseUrl>
 		<projectUrl>https://github.com/mwasplund/Tracer</projectUrl>
-		<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+		<iconUrl>https://raw.githubusercontent.com/mwasplund/Tracer/master/Assets/cpp_icon.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Simply header based implementation of logging to std out in c++ modern code.</description>
 		<releaseNotes>Beta build.</releaseNotes>
 		<copyright>Copyright 2017</copyright>
-		<tags>cpp c++ trace tracer logging log</tags>
+		<tags>native cpp c++ trace tracer logging log</tags>
 		<dependencies>
 		</dependencies>
 	</metadata>
 
 	<files>
-		<file src="Tracer.h" target="" />
+		<file src="Build/CPP.Tracer.targets" target="build" />
+		<file src="Source/Tracer/Tracer.h" target="build/inc/tracer" />
+		<file src="Source/Tracer/CaptureStream.h" target="build/inc/tracer" />
+		<file src="Source/Tracer/VSOutputDebugStreamBufW.h" target="build/inc/tracer" />
 	</files>
 </package>
