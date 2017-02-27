@@ -10,9 +10,16 @@ Copyright (C) mwasplund. All rights reserved.
 ***********************************************************************************************
 -->
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemDefinitionGroup Condition="'$(DisableCPPTracer)' == ''">
-    <ClCompile>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-  </ItemDefinitionGroup>
+	<PropertyGroup>
+		<TracerLibPath>$(MSBuildThisFileDirectory)..\lib\native\$(Platform)\$(Configuration)\</TracerLibPath>
+	</PropertyGroup>
+	
+	<ItemDefinitionGroup Condition="'$(DisableCPPTracer)' == ''">
+		<Link>
+			<AdditionalDependencies>$(TracerLibPath)Tracer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+		<ClCompile>
+			<AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)native\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+		</ClCompile>
+	</ItemDefinitionGroup>
 </Project>

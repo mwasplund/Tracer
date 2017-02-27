@@ -1,14 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{07190aa8-1324-4639-bf81-433e7e90acd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tracer">
+      <UniqueIdentifier>{907ca56d-eb7d-4f08-82c2-90099ddacbfa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tracer.h" />
-    <ClInclude Include="CaptureStream.h" />
-    <ClInclude Include="VSOutputDebugStreamBufW.h" />
+    <ClInclude Include="CaptureStream.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="VSOutputDebugStreamBufW.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracer.h">
+      <Filter>Tracer</Filter>
+    </ClInclude>
+    <ClInclude Include="TracerImpl.h">
+      <Filter>Tracer</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TracerImpl.cpp">
+      <Filter>Tracer</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp" />
   </ItemGroup>
 </Project>

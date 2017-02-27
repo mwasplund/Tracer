@@ -3,7 +3,7 @@
 	<metadata>
 		<id>CPP.Tracer</id>
 		<title>CPP Tracer</title>
-		<version>0.1.1</version>
+		<version>0.1.4</version>
 		<authors>Matthew Asplund</authors>
 		<owners>mwasplund</owners>
 		<licenseUrl>https://raw.githubusercontent.com/mwasplund/Tracer/master/LICENSE</licenseUrl>
@@ -32,8 +32,15 @@
 
 	<files>
 		<file src="Build/CPP.Tracer.targets" target="build" />
-		<file src="Source/Tracer/Tracer.h" target="build/inc/tracer" />
-		<file src="Source/Tracer/CaptureStream.h" target="build/inc/tracer" />
-		<file src="Source/Tracer/VSOutputDebugStreamBufW.h" target="build/inc/tracer" />
+		<file src="Source/Tracer/Tracer.h" target="build/native/inc/tracer" />
+		<file src="Source/Tracer/TracerImpl.h" target="build/native/inc/tracer" />
+		<file src="Source/Tracer/CaptureStream.h" target="build/native/inc/tracer" />
+		<file src="Source/Tracer/VSOutputDebugStreamBufW.h" target="build/native/inc/tracer" />
+
+		<file src="bin/x64/Release/Tracer/Tracer.lib" target="lib/native/x64/Release" />
+		<file src="bin/x64/Debug/Tracer/Tracer.lib" target="lib/native/x64/Debug" />
+		<file src="bin/Win32/Release/Tracer/Tracer.lib" target="lib/native/Win32/Release" />
+		<file src="bin/Win32/Debug/Tracer/Tracer.lib" target="lib/native/Win32/Debug" />
 	</files>
+	
 </package>
