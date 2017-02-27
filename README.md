@@ -2,12 +2,12 @@
 A c++ class based tracer for simple program logging to std out.
 
 #Example
-```cpp
+```c++
 Tracer::LogMessage(L"Test Log Message.");
 Tracer::LogError(L"Test Log Error.");
 Tracer::LogWarning(L"Test Log Warning.");
 ```
-```cpp
+```c++
 {
 	CaptureStream<VSOutputDebugStreamBufW> capture(&std::wcout);
 	Tracer::LogMessage(L"Test Log Message to VS.");
