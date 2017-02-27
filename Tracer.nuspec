@@ -11,8 +11,7 @@
 		<iconUrl>https://raw.githubusercontent.com/mwasplund/Tracer/master/Assets/cpp_icon.png</iconUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>
-			CPP Tracer is a modern C++ package that contains a collection of header based classes that
-			make logging events during runtime simple and efficient.
+			CPP Tracer is a modern C++ package that contains a collection of header based classes that make logging events during runtime simple and efficient.
 
 			Note: This project is in early development and the interfaces may be in flux.
 
