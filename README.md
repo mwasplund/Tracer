@@ -1,6 +1,16 @@
 # Tracer
 A c++ class based tracer for simple program logging to std out.
 
+By default Trace will be enabled for all builds, however any client can override
+the default behavior to either force tracer to be compiled out when desired.
+#Enable debug builds
+```c++
+#ifdef DEBUG
+#define TRACER_ENABLED true
+#else
+#define TRACER_ENABLED false
+#endif
+```
 #Example
 ```c++
 Tracer::LogMessage(L"Test Log Message.");
