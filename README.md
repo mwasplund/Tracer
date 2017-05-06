@@ -2,7 +2,8 @@
 A c++ class based tracer for simple program logging to std out.
 
 By default Trace will be enabled for all builds, however any client can override
-the default behavior to either force tracer to be compiled out when desired.
+the default behavior to either allow tracer to be compiled out when desired.
+When disabled the Tracer methods will result in NO-OPs and any will be removed by the compiler.
 #Enable debug builds
 ```c++
 #ifdef DEBUG
