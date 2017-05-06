@@ -1,0 +1,2 @@
+cd C:\Users\masplund\Source\Repos\Tracer
+..\Playground\Tools\NuGet.exe pack Tracer.nuspec -OutputDirectory ..\..\NuGetFeed\

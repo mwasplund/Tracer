@@ -14,15 +14,15 @@ When disabled the Tracer methods will result in NO-OPs and any will be removed b
 ```
 #Example
 ```c++
-Tracer::LogMessage(L"Test Log Message.");
-Tracer::LogError(L"Test Log Error.");
-Tracer::LogWarning(L"Test Log Warning.");
+Tracer::Log::Message(L"Test Log Message.");
+Tracer::Log::Error(L"Test Log Error.");
+Tracer::Log::Warning(L"Test Log Warning.");
 ```
 ```c++
 {
 	CaptureStream<VSOutputDebugStreamBufW> capture(&std::wcout);
-	Tracer::LogMessage(L"Test Log Message to VS.");
-	Tracer::LogError(L"Test Log Error to VS.");
-	Tracer::LogWarning(L"Test Log Warning to VS.");	
+	Tracer::Log::Message(L"Test Log Message to VS.");
+	Tracer::Log::Error(L"Test Log Error to VS.");
+	Tracer::Log::Warning(L"Test Log Warning to VS.");	
 }
 ```

@@ -5,7 +5,7 @@
 #pragma once
 
 // Tracer
-#include <Tracer.h>
+#include <Tracer/Log.h>
 
 // Windows
 #include <Windows.h>

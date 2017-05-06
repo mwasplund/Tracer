@@ -15,18 +15,18 @@
     <ClInclude Include="VSOutputDebugStreamBufW.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Tracer.h">
-      <Filter>Tracer</Filter>
-    </ClInclude>
-    <ClInclude Include="TracerImpl.h">
-      <Filter>Tracer</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Log.h">
+      <Filter>Tracer</Filter>
+    </ClInclude>
+    <ClInclude Include="LogImpl.h">
+      <Filter>Tracer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TracerImpl.cpp">
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="LogImpl.cpp">
       <Filter>Tracer</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp" />
   </ItemGroup>
 </Project>
