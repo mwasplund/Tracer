@@ -52,8 +52,9 @@ namespace Tracer
 
 		if (s_showMessageBox)
 		{
-#ifdef _WIN32
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 			MessageBoxW(nullptr, message, L"Tracer - Error", MB_OK);
+#else
 #endif
 		}
 	}
