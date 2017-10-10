@@ -11,7 +11,16 @@ Copyright (C) mwasplund. All rights reserved.
 -->
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="Common.props" />
-  
+
   <PropertyGroup>
   </PropertyGroup>
+
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <Link>
+    </Link>
+  </ItemDefinitionGroup>
 </Project>

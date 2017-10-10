@@ -17,7 +17,7 @@ namespace Tracer
 		while (currValue != 0 && index >= 0)
 		{
 			int digit = currValue % 10;
-			wchar_t digitChar = digit + 48;
+			wchar_t digitChar = static_cast<wchar_t>(digit + 48);
 			result[index] = digitChar;
 			index--;
 			currValue /= 10;
