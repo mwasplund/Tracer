@@ -13,6 +13,8 @@ Copyright (C) mwasplund. All rights reserved.
   <Import Project="Common.props" />
 
   <PropertyGroup>
+    <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
 
   <ItemDefinitionGroup>
