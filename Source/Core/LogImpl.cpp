@@ -50,6 +50,10 @@ namespace Tracer
 		std::wstring errorMessage = std::wstring(L"ERROR: ") + message;
 		WriteLine(errorMessage.c_str());
 
+#if _DEBUG
+		__debugbreak();
+#endif
+
 		if (s_showMessageBox)
 		{
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
