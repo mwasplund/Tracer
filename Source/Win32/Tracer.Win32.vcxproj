@@ -31,7 +31,7 @@
     <ProjectGuid>{3535F251-7919-4104-B9AE-EDF7038B2D08}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Tracer</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
