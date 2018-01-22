@@ -60,8 +60,8 @@
       <PreprocessorDefinitions>_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>
-        $(SourceDir)\Core\Public\;
-        %(AdditionalIncludeDirectories)
+        %(AdditionalIncludeDirectories);
+        $(SourceDir)\Core\Public\
       </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
