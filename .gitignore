@@ -2,6 +2,7 @@
 [Oo]bj
 [Bb]in
 ipch
+.vs/
 *.suo
 *.opendb
 *.db

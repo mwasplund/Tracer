@@ -17,7 +17,7 @@ namespace Tracer
 		while (currValue != 0 && index >= 0)
 		{
 			int digit = currValue % 10;
-			wchar_t digitChar = digit + 48;
+			wchar_t digitChar = static_cast<wchar_t>(digit + 48);
 			result[index] = digitChar;
 			index--;
 			currValue /= 10;
@@ -26,7 +26,7 @@ namespace Tracer
 		return result;
 	}
 
-	void WriteLine(const wchar_t* message)
+	void WriteLine(std::wstring_view message)
 	{
 		// Get the current time
 		time_t rawTime = time(nullptr);
@@ -40,27 +40,34 @@ namespace Tracer
 			<< message << std::endl;
 	}
 
-	void LogImpl::MessageImpl(const wchar_t* message)
+	void LogImpl::MessageImpl(std::wstring_view message)
 	{
 		WriteLine(message);
 	}
 
-	void LogImpl::ErrorImpl(const wchar_t* message)
+	void LogImpl::ErrorImpl(std::wstring_view message)
 	{
-		std::wstring errorMessage = std::wstring(L"ERROR: ") + message;
-		WriteLine(errorMessage.c_str());
+		std::wostringstream errorMessage;
+		errorMessage << L"ERROR: " << message;
+		WriteLine(errorMessage.str());
+
+#if _DEBUG
+		__debugbreak();
+#endif
 
 		if (s_showMessageBox)
 		{
-#ifdef _WIN32
-			MessageBoxW(nullptr, message, L"Tracer - Error", MB_OK);
+#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
+			MessageBoxW(nullptr, message.data(), L"Tracer - Error", MB_OK);
+#else
 #endif
 		}
 	}
 
-	void LogImpl::WarningImpl(const wchar_t* message)
+	void LogImpl::WarningImpl(std::wstring_view message)
 	{
-		std::wstring warningMessage = std::wstring(L"WARNING: ") + message;
-		WriteLine(warningMessage.c_str());
+		std::wostringstream warningMessage;
+		warningMessage << L"WARNING: " << message;
+		WriteLine(warningMessage.str());
 	}
 } // namespace Tracer

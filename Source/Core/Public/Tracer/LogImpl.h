@@ -4,6 +4,7 @@
 
 #pragma once
 
+
 namespace Tracer
 {
 	/// <summary>
@@ -20,8 +21,8 @@ namespace Tracer
 		/// <summary>
 		/// Logging api implementation
 		/// </summary>
-		static void _stdcall MessageImpl(const wchar_t* message);
-		static void _stdcall ErrorImpl(const wchar_t* message);
-		static void _stdcall WarningImpl(const wchar_t* message);
+		static void _stdcall MessageImpl(std::wstring_view message);
+		static void _stdcall ErrorImpl(std::wstring_view message);
+		static void _stdcall WarningImpl(std::wstring_view message);
 	};
 } // namespace Tracer

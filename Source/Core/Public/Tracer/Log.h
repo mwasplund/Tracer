@@ -30,29 +30,17 @@ namespace Tracer
 		/// <summary>
 		/// Log a message to std out
 		/// </summary>
-		static void Message(const wchar_t* message)
+		static void Message(std::wstring_view message)
 		{
 			IF_TRACER_ENABLED(MessageImpl(message);)
 		}
-		static void Message(const std::wstring& message)
-		{
-			IF_TRACER_ENABLED(MessageImpl(message.c_str());)
-		}
-		static void Error(const wchar_t* message)
+		static void Error(std::wstring_view message)
 		{
 			IF_TRACER_ENABLED(ErrorImpl(message);)
 		}
-		static void Error(const std::wstring& message)
-		{
-			IF_TRACER_ENABLED(ErrorImpl(message.c_str());)
-		}
-		static void Warning(const wchar_t* message)
+		static void Warning(std::wstring_view message)
 		{
 			IF_TRACER_ENABLED(WarningImpl(message);)
-		}
-		static void Warning(const std::wstring& message)
-		{
-			IF_TRACER_ENABLED(WarningImpl(message.c_str());)
 		}
 		static void SetShowMessageBox(bool value)
 		{
