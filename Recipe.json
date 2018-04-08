@@ -4,7 +4,7 @@
   "standard": "17",
   "dependencies": [],
   "public": [
-    "Source/Core/Public/**/*.h"
+    "Source/Core/Log.h"
   ],
   "source": [
     "Source/Core/**/*.cpp",
