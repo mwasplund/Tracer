@@ -1,8 +1,3 @@
-﻿#Visual Studio Files
-[Oo]bj
-[Bb]in
-ipch
-.vs/
-*.suo
-*.opendb
-*.db
+﻿# Soup
+.soup/
+out/

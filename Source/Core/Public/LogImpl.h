@@ -3,7 +3,7 @@
 // </copyright>
 
 #pragma once
-
+#include <string>
 
 namespace Tracer
 {
@@ -21,8 +21,8 @@ namespace Tracer
 		/// <summary>
 		/// Logging api implementation
 		/// </summary>
-		static void _stdcall MessageImpl(std::wstring_view message);
-		static void _stdcall ErrorImpl(std::wstring_view message);
-		static void _stdcall WarningImpl(std::wstring_view message);
+		static void _stdcall MessageImpl(std::wstring message);
+		static void _stdcall ErrorImpl(std::wstring message);
+		static void _stdcall WarningImpl(std::wstring message);
 	};
 } // namespace Tracer

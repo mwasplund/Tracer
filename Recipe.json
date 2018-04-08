@@ -1,7 +1,13 @@
 {
   "name": "Tracer",
   "version": "1.0.0",
+  "standard": "17",
   "dependencies": [],
-  "public": [],
-  "source": []
+  "public": [
+    "Source/Core/Public/**/*.h"
+  ],
+  "source": [
+    "Source/Core/**/*.cpp",
+    "Source/Core/**/*.h"
+  ]
 }

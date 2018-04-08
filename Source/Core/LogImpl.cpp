@@ -2,8 +2,12 @@
 //     Copyright (c) MWASPLUND. All rights reserved.
 // </copyright>
 
-#include "pch.h"
 #include "LogImpl.h"
+#include <string>
+#include <iostream>
+#include <chrono>
+#include <iomanip>
+#include <sstream>
 
 namespace Tracer
 {
@@ -26,26 +30,21 @@ namespace Tracer
 		return result;
 	}
 
-	void WriteLine(std::wstring_view message)
+	void WriteLine(std::wstring message)
 	{
 		// Get the current time
-		time_t rawTime = time(nullptr);
-		tm timeInfo;
-		localtime_s(&timeInfo, &rawTime);
+		auto now = std::time(nullptr);
+		auto tm = *std::localtime(&now);
 
-		std::wcout << L"["
-			<< ToString(timeInfo.tm_hour, 2) << L":"
-			<< ToString(timeInfo.tm_min, 2) << L":"
-			<< ToString(timeInfo.tm_sec, 2) << L"] "
-			<< message << std::endl;
+		std::wcout << std::put_time(&tm, "[%H:%M:%S]") << message << std::endl;
 	}
 
-	void LogImpl::MessageImpl(std::wstring_view message)
+	void LogImpl::MessageImpl(std::wstring message)
 	{
 		WriteLine(message);
 	}
 
-	void LogImpl::ErrorImpl(std::wstring_view message)
+	void LogImpl::ErrorImpl(std::wstring message)
 	{
 		std::wostringstream errorMessage;
 		errorMessage << L"ERROR: " << message;
@@ -57,14 +56,11 @@ namespace Tracer
 
 		if (s_showMessageBox)
 		{
-#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
-			MessageBoxW(nullptr, message.data(), L"Tracer - Error", MB_OK);
-#else
-#endif
+			// TODO
 		}
 	}
 
-	void LogImpl::WarningImpl(std::wstring_view message)
+	void LogImpl::WarningImpl(std::wstring message)
 	{
 		std::wostringstream warningMessage;
 		warningMessage << L"WARNING: " << message;
