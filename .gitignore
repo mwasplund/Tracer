@@ -6,6 +6,3 @@ ipch
 *.suo
 *.opendb
 *.db
-
-#NuGet Files
-*.nupkg
