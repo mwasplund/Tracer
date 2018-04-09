@@ -4,10 +4,11 @@
 
 #include "LogImpl.h"
 #include <string>
-#include <iostream>
-#include <chrono>
-#include <iomanip>
 #include <sstream>
+#include <ctime>
+#include <chrono>
+#include <iostream>
+#include <iomanip>
 
 namespace Tracer
 {
@@ -33,10 +34,15 @@ namespace Tracer
 	void WriteLine(std::wstring message)
 	{
 		// Get the current time
-		auto now = std::time(nullptr);
-		auto tm = *std::localtime(&now);
+		auto now = std::chrono::system_clock::now();
+		auto time = std::chrono::system_clock::to_time_t(now);
+		tm timeInfo;
+		localtime_s(&timeInfo, &time);
 
-		std::wcout << std::put_time(&tm, "[%H:%M:%S]") << message << std::endl;
+		std::wcout
+			<< std::put_time(&timeInfo, L"[%H:%M:%S]")
+			<< message 
+			<< std::endl;
 	}
 
 	void LogImpl::MessageImpl(std::wstring message)
@@ -56,7 +62,7 @@ namespace Tracer
 
 		if (s_showMessageBox)
 		{
-			// TODO
+			// TODO 
 		}
 	}
 
