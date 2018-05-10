@@ -21,6 +21,8 @@
 
 namespace Tracer
 {
+SOUP_PKG_ACTIVE namespace SOUP_PKG_VERSION
+{
 	/// <summary>
 	/// Core tracer logging class
 	/// </summary>
@@ -47,4 +49,5 @@ namespace Tracer
 			s_showMessageBox = value;
 		}
 	};
-} // namespace Tracer
+}
+}

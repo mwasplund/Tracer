@@ -10,66 +10,65 @@
 #include <iostream>
 #include <iomanip>
 
-namespace Tracer
+using namespace Tracer;
+
+/*static*/ bool LogImpl::s_showMessageBox = false;
+
+std::wstring ToString(int value, int requiredDigits)
 {
-	/*static*/ bool LogImpl::s_showMessageBox = false;
-
-	std::wstring ToString(int value, int requiredDigits)
+	std::wstring result = std::wstring(requiredDigits, '0');
+	int index = requiredDigits - 1;
+	int currValue = value;
+	while (currValue != 0 && index >= 0)
 	{
-		std::wstring result = std::wstring(requiredDigits, '0');
-		int index = requiredDigits - 1;
-		int currValue = value;
-		while (currValue != 0 && index >= 0)
-		{
-			int digit = currValue % 10;
-			wchar_t digitChar = static_cast<wchar_t>(digit + 48);
-			result[index] = digitChar;
-			index--;
-			currValue /= 10;
-		}
-
-		return result;
+		int digit = currValue % 10;
+		wchar_t digitChar = static_cast<wchar_t>(digit + 48);
+		result[index] = digitChar;
+		index--;
+		currValue /= 10;
 	}
 
-	void WriteLine(std::wstring message)
-	{
-		// Get the current time
-		auto now = std::chrono::system_clock::now();
-		auto time = std::chrono::system_clock::to_time_t(now);
-		tm timeInfo;
-		localtime_s(&timeInfo, &time);
+	return result;
+}
 
-		std::wcout
-			<< std::put_time(&timeInfo, L"[%H:%M:%S]")
-			<< message 
-			<< std::endl;
-	}
+void WriteLine(std::wstring message)
+{
+	// Get the current time
+	auto now = std::chrono::system_clock::now();
+	auto time = std::chrono::system_clock::to_time_t(now);
+	tm timeInfo;
+	localtime_s(&timeInfo, &time);
 
-	void LogImpl::MessageImpl(std::wstring message)
-	{
-		WriteLine(message);
-	}
+	std::wcout
+		<< std::put_time(&timeInfo, L"[%H:%M:%S]")
+		<< message 
+		<< std::endl;
+}
 
-	void LogImpl::ErrorImpl(std::wstring message)
-	{
-		std::wostringstream errorMessage;
-		errorMessage << L"ERROR: " << message;
-		WriteLine(errorMessage.str());
+void LogImpl::MessageImpl(std::wstring message)
+{
+	WriteLine(message);
+}
+
+void LogImpl::ErrorImpl(std::wstring message)
+{
+	std::wostringstream errorMessage;
+	errorMessage << L"ERROR: " << message;
+	WriteLine(errorMessage.str());
 
 #if _DEBUG
-		__debugbreak();
+	__debugbreak();
 #endif
 
-		if (s_showMessageBox)
-		{
-			// TODO 
-		}
-	}
-
-	void LogImpl::WarningImpl(std::wstring message)
+	if (s_showMessageBox)
 	{
-		std::wostringstream warningMessage;
-		warningMessage << L"WARNING: " << message;
-		WriteLine(warningMessage.str());
+		// TODO 
 	}
-} // namespace Tracer
+}
+
+void LogImpl::WarningImpl(std::wstring message)
+{
+	std::wostringstream warningMessage;
+	warningMessage << L"WARNING: " << message;
+	WriteLine(warningMessage.str());
+}

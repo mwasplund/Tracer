@@ -57,7 +57,9 @@
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "_UNICODE"
+                "_UNICODE",
+                "SOUP_PKG_VERSION=v1_0_0",
+                "SOUP_PKG_ACTIVE=inline"
             ],
             "intelliSenseMode": "msvc-x64",
             "browse": {
@@ -77,5 +79,5 @@
             "cppStandard": "c++17"
         }
     ],
-    "version": 3
+    "version": 4
 }

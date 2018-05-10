@@ -7,6 +7,8 @@
 
 namespace Tracer
 {
+SOUP_PKG_ACTIVE namespace SOUP_PKG_VERSION
+{
 	/// <summary>
 	/// Implementation of all tracing logging functionality
 	/// </summary>
@@ -25,4 +27,5 @@ namespace Tracer
 		static void _stdcall ErrorImpl(std::wstring message);
 		static void _stdcall WarningImpl(std::wstring message);
 	};
-} // namespace Tracer
+}
+}
