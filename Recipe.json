@@ -2,12 +2,9 @@
   "name": "Tracer",
   "version": "1.0.0",
   "standard": "17",
-  "dependencies": [],
-  "public": [
-    "Source/Core/Log.h"
+  "dependencies": [
+    "D:/Repos/SoupStl/core/"
   ],
-  "source": [
-    "Source/Core/**/*.cpp",
-    "Source/Core/**/*.h"
-  ]
+  "public": "Source/Core/Tracer.cppm",
+  "source": []
 }
